@@ -1,0 +1,17 @@
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+  border: 2px solid #ffffff;
+  background: #f0f0f0;
+  border-radius: 6px;
+  box-shadow: -1px 2px 13px 13px #cdcdcd;
+}
