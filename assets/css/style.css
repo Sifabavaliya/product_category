@@ -15,3 +15,88 @@
   border-radius: 6px;
   box-shadow: -1px 2px 13px 13px #cdcdcd;
 }
+
+a.nav-link:active {
+  border-bottom: 2px solid rgb(255, 68, 0);
+  font-weight: 700;
+}
+
+svg {
+  height: 17px;
+  width: 17px;
+}
+
+a.nav-link.highlight {
+  color: rgb(235, 76, 18);
+  font-weight: 500;
+}
+
+.card {
+  height: 377px;
+  width: 300px;
+  margin-top: 32px;
+}
+
+.card-img {
+  height: 260px;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card-head {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-body .discripation .link:hover {
+  color: #07060b;
+  text-decoration: underline;
+}
+
+.badge {
+  position: absolute;
+  z-index: 100;
+  border-radius: 0;
+  top: 20px;
+  left: 20px;
+}
+
+a.price {
+  color: skyblue;
+}
+
+a.price del {
+  color: gray;
+}
+
+.link {
+  text-decoration: none;
+  color: black;
+}
+
+td {
+  width: 18%;
+}
+
+td.img-dash img {
+  width: 80px;
+}
+
+form.form {
+  margin: 15px 0px;
+  border: 2px solid #f3f3f3;
+  padding: 15px;
+  border-radius: 4px;
+}
+
+form.form label {
+  font-weight: 700;
+}

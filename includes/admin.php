@@ -1,10 +1,10 @@
 <?php
-
+    session_start();
     class Admin{
         
-        private $db;
+        public $db;
 
-        public function __consruct($db){
+        public function __construct($db){
             if (!$db) {
                 die("Database connection not received in Admin class.");
             }
@@ -17,7 +17,7 @@
                 die("Database connection is null in login method.");
             }        
 
-            $sql = "SELECT * FROM `admin` WHERE `username`='$username'";
+            $sql = "SELECT * FROM `admin` WHERE `username`='$username' AND `password`='$password'";
             $result = $this->db->query($sql); 
             
             if (!$result) {
@@ -26,21 +26,20 @@
 
             if($result -> num_rows > 0){
                 $user = $result -> fetch_assoc();
-
-                if(password_verify($password , $user['password'])){
-                    $_SESSION['admin'] = $user['id'];
-                    return true;
-                }
+                $_SESSION['admin'] = $user['id'];
+                return true;
             }
             return false;
         }
 
-        public function islogin(){
+        public function isloggedIn(){
             return isset($_SESSION['admin']);
         }
 
-        public function logout(){
-            unset($_SESSION['admin']);
+        public function logout() {
+            session_destroy();
+            header("Location: ../index.php");
+            exit();
         }
     }
 
