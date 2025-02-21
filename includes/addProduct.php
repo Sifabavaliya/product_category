@@ -12,7 +12,7 @@
      
     if (!empty($id)) {
       $btn_text = "Update Product";
-      $row = $product->getProductsById($id);
+      $row = $product->getproductsbyid($id);
       if ($row) {
           $name = $row['name'] ?? '';
           $price = $row['price'] ?? '';
@@ -38,20 +38,20 @@
           $image = '../assets/image/' . basename($_FILES['image']['name']);
           move_uploaded_file($_FILES['image']['tmp_name'], $image);
         } elseif (!empty($_POST['id'])) {
-          $row = $product->getProductsById($_POST['id']);
+          $row = $product->getproductsbyid($_POST['id']);
           $image = $row['image'];
         }
       
         $descripation=$_POST['descripation'];
 
         if (!empty($id)) {
-          if ($product->updateProduct($id, $name, $price, $sale_price, $category, $image, $descripation, $rating, $label, $label_bg)) {
+          if ($product->updateproduct($id, $name, $price, $sale_price, $category, $image, $descripation, $rating, $label, $label_bg)) {
             header("Location: admin_dashboard.php");
           } else {
               echo "Failed to update product.";
           }
       } else {
-          if ($product->addProduct($name, $price, $sale_price, $category, $image, $descripation, $rating, $label, $label_bg)) {
+          if ($product->addproduct($name, $price, $sale_price, $category, $image, $descripation, $rating, $label, $label_bg)) {
             header("Location: admin_dashboard.php");
           } else {
               echo "Failed to add product.";

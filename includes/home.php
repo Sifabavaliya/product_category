@@ -6,9 +6,9 @@ $db = new Database();
 $product = new Product($db);
 $category = isset($_GET['category']) ? $_GET['category'] : null;
 if(isset($category)){
-  $products = $product->getProductsByCategory($category);
+  $products = $product->getproductsbycategory($category);
 }else{
-  $products = $product->getAllProduct();
+  $products = $product->getallproduct();
 }
 
 function generateStars($rating) {

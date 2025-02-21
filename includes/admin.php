@@ -32,7 +32,7 @@
             return false;
         }
 
-        public function isloggedIn(){
+        public function isloggedin(){
             return isset($_SESSION['admin']);
         }
 

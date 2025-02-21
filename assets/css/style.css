@@ -31,6 +31,11 @@ a.nav-link.highlight {
   font-weight: 500;
 }
 
+.row {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+}
+
 .card {
   height: 377px;
   width: 300px;
@@ -99,4 +104,23 @@ form.form {
 
 form.form label {
   font-weight: 700;
+}
+
+@media (max-width: 991px) {
+  .row {
+    display: grid;
+    grid-template-columns: auto auto auto;
+  }
+}
+@media (max-width: 786px) {
+  .row {
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+}
+@media (max-width: 480px) {
+  .row {
+    display: grid;
+    grid-template-columns: auto;
+  }
 }
