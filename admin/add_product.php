@@ -13,7 +13,6 @@
 </head>
 <body>
     <div class="container">
-        <!-- <h2>Add Product</h2> -->
         <form class="form" method="POST" enctype="multipart/form-data">
             <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">Product Name:</label>

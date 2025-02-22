@@ -71,9 +71,15 @@
                           <a href="" class="link"><?= trimWords($prod['descripation'], 8) ?></a>
                           </div>
                           <div class="price">
-                            <a class="price link"><?php if($prod['sale_price']){ ?>
-                                <del><?php echo $prod['price']; ?></del> <span><?php echo $prod['sale_price'];?></span>
-                            <?php }else{ echo $prod['price']; } ?></a>
+                            <a class="price link">
+                              <?php if(!empty($prod['sale_price']) && $prod['sale_price']>0) {
+                              echo "<p><del>₹" . number_format($prod['price']) ."</del>" ;
+                              echo " ₹" . number_format($prod['sale_price'], 2) . "</p>";
+                            } else {
+                              echo "<p>₹" . number_format($prod['price'], 2) . "</p>";
+                            }
+                          ?>
+                            </a>
                           </div> 
                         </div>
                     </div>
